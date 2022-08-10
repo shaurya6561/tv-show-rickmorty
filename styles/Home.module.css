@@ -1,6 +1,237 @@
-.container {
+.navigationBar {
+  margin: 0 0 20px 0;
   padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #3367a3;
 }
+
+.infiniteScroll {
+  width: 80%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchField{
+  outline: 1px solid white;
+  padding: 8px 12px;
+  margin-left: 100px;
+  width: 300px;
+  border-radius: 20px;
+}
+.resultContainer{
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  width: 0;
+  position: relative;
+}
+.result{
+  position: absolute;
+  top:10px;
+  left: 100px;
+  width: 300px;
+  background-color: white;
+  color:black;
+  z-index: 10;
+}
+
+@media only screen and (max-width:600px) {
+  .searchField{
+    margin-left: 0;
+    width: 50vw;
+    margin-left: 10px;
+  }
+
+  .result{
+    left:0;
+  }
+
+  .navigationHeading{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width:300px) {
+
+  .searchField{
+    display: none;
+  }
+}
+
+.resultItem{
+  padding:5px 10px;
+}
+
+.resultItem:hover{
+  background-color: rgb(223, 223, 223);
+}
+.containerHomePage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+@media only screen and (max-width: 1260px) {
+  .containerHomePage {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .containerHomePage {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .containerHomePage {
+    grid-template-columns: 1fr;
+  }
+}
+
+.showInfoContainer {
+  background-color: #ffffff;
+  color: #111;
+  height: 100%;
+  padding: 10px;
+}
+
+.card {
+  margin: 2rem 1rem;
+  text-align: left;
+  color: inherit;
+  border-radius: 10px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.2s ease-in-out;
+  max-width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  transform: scale(1.05);
+  color: #0070f3;
+  border-color: #8592a1;
+  box-shadow: #40D0E0 0px 2px 4px, #40D0E0 0px 7px 13px -3px, #40D0E0 0px -3px 0px inset;
+}
+
+.showImage {
+  /* height: 250px; */
+  width: 250px;
+}
+
+.showDetail {
+  display: flex;
+  align-items: center;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+@media only screen and (max-width:600px) {
+  .showDetail{
+  flex-direction: column;
+  align-items: center;
+  }
+
+}
+/* 
+.showDetailMainImage {
+  height: 50%;
+} */
+
+.showDetailMainImage{
+  border: 1px solid white;
+  height: 300px;
+  width: 200px;
+}
+
+.showInformation {
+  border: 5px solid rgb(14, 14, 73);
+  border-radius: 20px;
+  padding:20px;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width:600px){
+.showInformation {
+  margin: 20px 0;
+}
+}
+
+.additionalShowInfo {
+  background-color: #eaeaea;
+  color:rgb(14, 14, 73);
+  border-radius: 10px;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.additionalInfo {
+  padding: 2px 0px 0px 2px;
+}
+
+.imageContainer {
+  height: 400px;
+  width: 300px;
+  border: 1px solid white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imageContainer > img {
+  border-radius: 10px;
+  height: 400px;
+  width: 300px;
+}
+
+.showDetailMainImage {
+}
+
+.showName {
+  padding: 0.5rem 0 0 0 ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.genres{
+  margin: 10px auto;
+  background-color: rgb(76, 76, 76);
+  color: white;
+  padding:6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  transform: all 500ms linear;
+}
+
+.rating{
+  display: flex;
+  align-items: center;
+}
+
+.time{
+  display: flex;
+  align-items: center;
+}
+
 
 .main {
   min-height: 100vh;
@@ -73,40 +304,15 @@
   max-width: 800px;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
 
-.card h2 {
+/* #40D0E0 */
+/* .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
-}
+} */
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
 
 @media (max-width: 600px) {
   .grid {
